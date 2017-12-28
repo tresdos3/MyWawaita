@@ -1,0 +1,81 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header text-center" data-background-color="red">
+            <h4 class="title">Seccion Profesores</h4>
+          </div>
+          <div class="card-content">
+            <div class="row">
+              <div class="col-md-7">
+                <form [formGroup]="register_form" novalidate (ngSubmit)="register(register_form.value, register_form.valid)">
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Nombre:</label>
+                      <input type="text" class="form-control" placeholder="Nombre del docente" #name formControlName="name">
+                      <p *ngIf="!register_form.controls['name'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Apellido:</label>
+                      <input type="text" class="form-control" placeholder="Apellidos del docente" #lastname formControlName="lastname">
+                      <p *ngIf="!register_form.controls['lastname'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Ci:</label>
+                      <input type="text" class="form-control" placeholder="Cedula de identidad" #ci formControlName="ci">
+                      <p *ngIf="!register_form.controls['ci'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Procedencia:</label>
+                      <input type="text" class="form-control" placeholder="Lugar de procedencia" #from formControlName="from">
+                      <p *ngIf="!register_form.controls['from'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Direccion:</label>
+                      <input type="text" class="form-control" placeholder="Direccion" #address formControlName="address">
+                      <p *ngIf="!register_form.controls['address'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group label-static">
+                      <label for="i2" class="control-label">Celular:</label>
+                      <input type="number" class="form-control" placeholder="Numero de celular" #phone formControlName="phone">
+                      <p *ngIf="!register_form.controls['phone'].valid">
+                        <code>Este campo esta vacio</code>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-warning" [disabled]="!register_form.valid">Registrar Docente</button>
+                    </div>
+                </form>
+              </div>
+              <div class="col-md-5">
+                <code>aki vendra la list de docentes</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="login">
+  <div class="banner"></div>
+  <div class="form">
+    <form class="wrapper" [formGroup]="login_form" novalidate (ngSubmit)="login(login_form.value, login_form.valid)">
+      <div class="row">
+        <div class="label">Correo electrónico</div>
+        <input type="email" placeholder="Correo electrónico" #email formControlName="email">
+      </div>
+      <div class="row">
+        <div class="label">Contraseña</div>
+        <input type="password" placeholder="Contraseña" #password formControlName="password">
+      </div>
+      <div class="row">
+        <button type="submit" [disabled]="!login_form.valid">Iniciar</button>
+      </div>
+    </form>
+    <div class="signup">
+      <a (click)="verficar()" *ngIf="enviarcorreo">Verificar Ahora</a>
+      Olvidaste tu contracena?
+      <a [routerLink]="['/recuperar']">Recuperar Ahora</a>
+    </div>
+  </div>
+</div>
+{{login_form.value | json }}
