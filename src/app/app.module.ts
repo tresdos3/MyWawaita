@@ -23,6 +23,7 @@ import { SidebarComponent } from './content/components/sidebar/sidebar.component
 import { DashboardTeacherComponent } from './content/dashboard/dashboard-teacher/dashboard-teacher.component';
 import { DataService } from './core/service/data.service';
 import { DocPipe } from './core/pipe/doc.pipe';
+import { DashboardNotifyComponent } from './content/dashboard/dashboard-notify/dashboard-notify.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DocPipe } from './core/pipe/doc.pipe';
     NavbarComponent,
     SidebarComponent,
     DashboardTeacherComponent,
-    DocPipe
+    DocPipe,
+    DashboardNotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { DocPipe } from './core/pipe/doc.pipe';
       {path: 'home', component: HomeIndexComponent, canActivate: [AuthGuard] , children: [
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         { path: 'dashboard', component: DashboardIndexComponent},
-        { path: 'teacher', component: DashboardTeacherComponent}
+        { path: 'teacher', component: DashboardTeacherComponent},
+        { path: 'notify', component: DashboardNotifyComponent},
       ]}
     ])
   ],

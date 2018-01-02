@@ -4,5 +4,7 @@ export interface Teacher {
     ci: string;
     from: string;
     address: string;
-    phone: number;
+    phone?: number;
+    create_at?: number;
+    actived?: boolean;
 }
